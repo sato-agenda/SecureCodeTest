@@ -7,6 +7,11 @@ import api.main as main
 
 app = Flask(__name__)
 Talisman(app)
+app.config.update(
+    SESSION_COOKIE_SECURE=True,
+    SESSION_COOKIE_HTTPONLY=True,
+    SESSION_COOKIE_SAMESITE="Lax",
+)
 
 @app.route("/reset", methods=["GET", "POST"])
 def reset():
