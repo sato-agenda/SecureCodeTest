@@ -9,6 +9,7 @@ app = Flask(__name__)
 app.config["SESSION_COOKIE_SECURE"] = True
 app.config["SESSION_COOKIE_HTTPONLY"] = True
 app.config["SESSION_COOKIE_SAMESITE"] = "Lax"
+app.config["PREFERRED_URL_SCHEME"] = "https"
 Talisman(app)
 
 @app.route("/reset", methods=["GET", "POST"])
