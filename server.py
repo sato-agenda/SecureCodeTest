@@ -3,6 +3,7 @@
 ##########################################################################################
 from flask import Flask, request
 from flask_cors import CORS
+from flask_tailsman import Tailsman
 import requests
 
 # 定数定義
@@ -10,6 +11,7 @@ SERVICE_PORT = 8080
 
 app = Flask(__name__)
 CORS(app)
+Tailsman(app)
 
 
 @app.route("/<category>/<method>", methods=["GET", "POST"])

@@ -2,9 +2,11 @@
 #    内蔵アプリケーションサーバーを起動します。
 ##########################################################################################
 from flask import Flask, request
+from flask_tailsman import Tailsman
 import api.main as main
 
 app = Flask(__name__)
+Tailsman(app)
 
 @app.route("/reset", methods=["GET", "POST"])
 def reset():
