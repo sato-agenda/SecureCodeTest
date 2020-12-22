@@ -2,11 +2,11 @@
 #    内蔵アプリケーションサーバーを起動します。
 ##########################################################################################
 from flask import Flask
-from flask_tailsman import Tailsman
+from flask_talisman import Talisman
 import api.main as main
 
 app = Flask(__name__)
-Tailsman(app)
+Talisman(app)
 
 @app.route("/check", methods=["GET", "POST"])
 def index():
