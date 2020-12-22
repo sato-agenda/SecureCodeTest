@@ -10,13 +10,11 @@ import requests
 SERVICE_PORT = 8080
 
 app = Flask(__name__)
+app.config["SESSION_COOKIE_SECURE"] = True
+app.config["SESSION_COOKIE_HTTPONLY"] = True
+app.config["SESSION_COOKIE_SAMESITE"] = "Lax"
 CORS(app)
 Talisman(app)
-app.config.update(
-    SESSION_COOKIE_SECURE=True,
-    SESSION_COOKIE_HTTPONLY=True,
-    SESSION_COOKIE_SAMESITE="Lax",
-)
 
 
 @app.route("/<category>/<method>", methods=["GET", "POST"])
